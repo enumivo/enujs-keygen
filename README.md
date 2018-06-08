@@ -1,18 +1,15 @@
-<!--[![Build Status](https://travis-ci.org/EOSIO/eosjs-keygen.svg?branch=master)](https://travis-ci.org/EOSIO/eosjs-keygen)-->
-[![NPM](https://img.shields.io/npm/v/eosjs-keygen.svg)](https://www.npmjs.org/package/eosjs-keygen)
-
 # Repository
 
 The purpose of this library is for managing keys in local storage.
 
-General purpose cryptography is found in [eosjs-ecc](http://github.com/eosio/eosjs-ecc) library.  Hierarchical
-deterministic key generation uses PrivateKey.getChildKey in eosjs-ecc.
+General purpose cryptography is found in [enujs-ecc](http://github.com/enumivo/enujs-ecc) library.  Hierarchical
+deterministic key generation uses PrivateKey.getChildKey in enujs-ecc.
 
 ### Usage
 
 ```javascript
-let {Keystore, Keygen} = require('eosjs-keygen')
-Eos = require('eosjs')
+let {Keystore, Keygen} = require('enujs-keygen')
+Enu = require('enujs')
 
 sessionConfig = {
   timeoutInMin: 30,
@@ -24,13 +21,13 @@ sessionConfig = {
 }
 
 keystore = Keystore('myaccount', sessionConfig)
-eos = Eos.Testnet({keyProvider: keystore.keyProvider})
+enu = Enu.Testnet({keyProvider: keystore.keyProvider})
 
 Keygen.generateMasterKeys().then(keys => {
   // create blockchain account called 'myaccount'
   console.log(keys)
 
-  eos.getAccount('myaccount').then(account => {
+  enu.getAccount('myaccount').then(account => {
     keystore.deriveKeys({
       parent: keys.masterPrivateKey,
       accountPermissions: account.permissions
@@ -53,15 +50,15 @@ Use Node v8+ (updates `package-lock.json`)
 # Browser
 
 ```bash
-git clone https://github.com/EOSIO/eosjs-keygen.git
-cd eosjs-keygen
+git clone https://github.com/enumivo/enujs-keygen.git
+cd enujs-keygen
 npm install
 npm run build
-# builds: ./dist/eosjs-keygen.js
+# builds: ./dist/enujs-keygen.js
 ```
 
 ```html
-<script src="eosjs-keygen.js"></script>
+<script src="enujs-keygen.js"></script>
 <script>
 //kos.Keystore
 //kos.Keygen
