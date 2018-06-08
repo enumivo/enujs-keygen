@@ -3,7 +3,10 @@
 
 # Repository
 
-General purpose library for private key storage and key management.
+The purpose of this library is for managing keys in local storage.
+
+General purpose cryptography is found in [eosjs-ecc](http://github.com/eosio/eosjs-ecc) library.  Hierarchical
+deterministic key generation uses PrivateKey.getChildKey in eosjs-ecc.
 
 ### Usage
 
