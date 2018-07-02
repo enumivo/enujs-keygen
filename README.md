@@ -1,6 +1,6 @@
 # Repository
 
-The purpose of this library is for managing keys in local storage.
+The purpose of this library is for managing keys in local storage.  This is designed to derive and cache keys but also needs a password manager to store a "root" key. This library does not have secure or password protected storage. It does however figure out permission hierarchies and is configurable enough to only store keys you feel are safe to store.
 
 General purpose cryptography is found in [enujs-ecc](http://github.com/enumivo/enujs-ecc) library.  Hierarchical
 deterministic key generation uses PrivateKey.getChildKey in enujs-ecc.
