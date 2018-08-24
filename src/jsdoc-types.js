@@ -63,7 +63,7 @@
 */
 
 /**
-  Permissions object from Enu blockchain obtained via get_account.
+  Permissions object from Enumivo blockchain obtained via get_account.
 
   See chain API get_account => account.permissions.
 

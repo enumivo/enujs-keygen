@@ -109,7 +109,7 @@ function Keystore(accountName, config = {}) {
     keys will be saved to disk. (example: `active`).
 
     @arg {accountPermissions} [params.accountPermissions] - Permissions object
-    from Enu blockchain via get_account.  This is used to validate the parent
+    from Enumivo blockchain via get_account.  This is used to validate the parent
     and derive additional permission keys.  This allows this keystore to detect
     incorrect passwords early before trying to sign a transaction.
 
@@ -466,7 +466,7 @@ function Keystore(accountName, config = {}) {
     have private keys to return.
 
     @arg {keyPathMatcher} [keyPathMatcher = '**'] default is to match all
-    @arg {Array<pubkey>} [pubkeys = null] if specified, filter and require all
+    @arg {Array<pubkey>} [pubkeys = null] if specified, filter and require all 
 
     @throws Error `login with your ${key.pubkey} key`
     @throws Error `missing public key ${key}`
@@ -620,7 +620,7 @@ function Keystore(accountName, config = {}) {
 
   /**
     @typedef {object} oneTimeSignatures
-    @property {Array<string>} signatures - in hex
+    @property {Array<string>} signatures - in hex 
     @property {pubkey} oneTimePublic
   */
   /**
@@ -630,7 +630,7 @@ function Keystore(accountName, config = {}) {
   */
   function signSharedSecret(otherPubkey, keyPathMatcher = '**') {
     assert(/pubkey|PublicKey/.test(validate.keyType(otherPubkey)), 'otherPubkey')
-    assert.equal(typeof keyPathMatcher, 'string', 'keyPathMatcher')
+    assert(typeof keyPathMatcher, 'string', 'keyPathMatcher')
 
     return PrivateKey.randomKey().then(oneTimePrivate => {
       const sharedSecret = oneTimePrivate.getSharedSecret(otherPubkey)
@@ -698,7 +698,7 @@ function Keystore(accountName, config = {}) {
 
     Call keyProvider with no parameters or with a specific keyPathMatcher
     pattern to get an array of public keys in this key store.  A library
-    like enujs may be provided these available public keys to eosd
+    like enujs may be provided these available public keys to enunode
     get_required_keys for filtering and to determine which private keys are
     needed to sign a given transaction.
 

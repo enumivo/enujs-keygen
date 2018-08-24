@@ -40,7 +40,7 @@
   the signatures should accumulate to meet or exceed the auth&#39;s total threshold.</p>
 </dd>
 <dt><a href="#accountPermissions">accountPermissions</a> : <code>object</code></dt>
-<dd><p>Permissions object from Enu blockchain obtained via get_account.</p>
+<dd><p>Permissions object from Enumivo blockchain obtained via get_account.</p>
 <p>  See chain API get_account =&gt; account.permissions.</p>
 </dd>
 <dt><a href="#keyPath">keyPath</a> : <code>string</code></dt>
@@ -190,7 +190,7 @@ Login or derive and save private keys.  This may be called from a login
 | params | <code>object</code> |  |
 | params.parent | [<code>parentPrivateKey</code>](#parentPrivateKey) | Master password (masterPrivateKey),     active, owner, or other permission key. |
 | [params.saveKeyMatches] | [<code>Array.&lt;keyPathMatcher&gt;</code>](#keyPathMatcher) | These private     keys will be saved to disk. (example: `active`). |
-| [params.accountPermissions] | [<code>accountPermissions</code>](#accountPermissions) | Permissions object     from Enu blockchain via get_account.  This is used to validate the parent     and derive additional permission keys.  This allows this keystore to detect     incorrect passwords early before trying to sign a transaction.     See Chain API `get_account => account.permissions`. |
+| [params.accountPermissions] | [<code>accountPermissions</code>](#accountPermissions) | Permissions object     from Enumivo blockchain via get_account.  This is used to validate the parent     and derive additional permission keys.  This allows this keystore to detect     incorrect passwords early before trying to sign a transaction.     See Chain API `get_account => account.permissions`. |
 
 <a name="module_Keystore..Keystore..getKeyPaths"></a>
 
@@ -308,7 +308,7 @@ Integration for 'enujs' ..
 
     Call keyProvider with no parameters or with a specific keyPathMatcher
     pattern to get an array of public keys in this key store.  A library
-    like enujs may be provided these available public keys to eosd
+    like enujs may be provided these available public keys to enunode
     get_required_keys for filtering and to determine which private keys are
     needed to sign a given transaction.
 
@@ -448,7 +448,7 @@ required_auth: {
 <a name="accountPermissions"></a>
 
 ## accountPermissions : <code>object</code>
-Permissions object from Enu blockchain obtained via get_account.
+Permissions object from Enumivo blockchain obtained via get_account.
 
   See chain API get_account => account.permissions.
 
