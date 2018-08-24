@@ -37,7 +37,7 @@
     "babel-preset-es2015": "^6.24.1",
     "browserify": "^14.4.0",
     "coveralls": "^3.0.0",
-    "enujs": "^4.0.2",
+    "enujs": "^16.0.0",
     "istanbul": "^1.1.0-alpha.1",
     "jsdoc-to-markdown": "^3.0.4",
     "mocha": "^3.4.2"
